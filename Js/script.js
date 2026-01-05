@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Category switching
   const categoryCards = document.querySelectorAll('.category-card');
   const categoryContents = document.querySelectorAll('.category-content');
 
   function showCategory(category) {
-
     categoryCards.forEach(card => card.classList.remove('active'));
     const targetCard = document.querySelector(`.category-card[data-category="${category}"]`);
     if (targetCard) targetCard.classList.add('active');
@@ -67,56 +67,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   showCategory('mobs');
-});
 
-const modelModal = document.getElementById('modelModal');
-const closeModalBtn = document.querySelector('.close');
+  // Modal
+  const modelModal = document.getElementById('modelModal');
+  const closeModalBtn = document.querySelector('.close');
 
-function openModelModal(modelName, modelDescription, modelImageUrl) {
-  document.getElementById('modalModelName').textContent = modelName;
-  document.getElementById('modalModelImage').src = modelImageUrl;
-  modelModal.style.display = 'block';
-}
+  function openModelModal(modelName, modelDescription, modelImageUrl, modelType) {
+    document.getElementById('modalModelName').textContent = modelName;
+    document.getElementById('modalModelType').textContent = modelType || '3D Model';
+    document.getElementById('modalModelDescription').textContent = modelDescription || '';
+    document.getElementById('modalModelImage').src = modelImageUrl;
+    modelModal.style.display = 'block';
+  }
 
+  function closeModelModal() {
+    modelModal.style.display = 'none';
+  }
 
-function closeModelModal() {
-  modelModal.style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
+  // Button click handlers
   document.querySelectorAll('.btn').forEach(btn => {
     if (btn.textContent.trim() === 'VIEW MORE') {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
-
         const card = this.closest('.card-slider');
         const modelName = card.querySelector('h3').textContent;
         const modelType = card.querySelector('.duration').textContent;
-        const fullDescription = card.dataset.description || "";
-        const modelImageUrl = card.querySelector('.model-image').src;
-
-        document.getElementById('modalModelType').textContent = modelType;
-        document.getElementById('modalModelDescription').textContent =
-          fullDescription || '';
-
-        openModelModal(modelName, fullDescription, modelImageUrl);
+        const modelDesc = card.dataset.description || '';
+        const modelImg = card.querySelector('.model-image').src;
+        openModelModal(modelName, modelDesc, modelImg, modelType);
       });
     }
   });
-});
 
-if (closeModalBtn) {
-  closeModalBtn.addEventListener('click', closeModelModal);
-}
-
-window.addEventListener('click', function (event) {
-  if (event.target === modelModal) {
-    closeModelModal();
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModelModal);
   }
-});
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape' || event.key === 'Esc') {
-    closeModelModal();
-  }
+  window.addEventListener('click', (e) => {
+    if (e.target === modelModal) closeModelModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.key === 'Escape' || e.key === 'Esc') && modelModal.style.display === 'block') {
+      closeModelModal();
+    }
+  });
 });
