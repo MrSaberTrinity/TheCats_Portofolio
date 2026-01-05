@@ -146,7 +146,7 @@ body {
 .promo-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: 100%;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
   max-height: 250px;
   object-fit: contain;
