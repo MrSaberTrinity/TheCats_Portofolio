@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Category switching
   const categoryCards = document.querySelectorAll('.category-card');
   const categoryContents = document.querySelectorAll('.category-content');
 
@@ -68,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   showCategory('mobs');
 
-  // Modal
   const modelModal = document.getElementById('modelModal');
   const closeModalBtn = document.querySelector('.close');
 
@@ -84,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modelModal.style.display = 'none';
   }
 
-  // Button click handlers
   document.querySelectorAll('.btn').forEach(btn => {
     if (btn.textContent.trim() === 'VIEW MORE') {
       btn.addEventListener('click', function (e) {
