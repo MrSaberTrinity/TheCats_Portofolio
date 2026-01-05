@@ -29,7 +29,6 @@ body {
   scroll-padding-top: 60px;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -50,7 +49,6 @@ body {
   scrollbar-color: #4a55ff #101020;
 }
 
-/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -70,7 +68,6 @@ body {
   margin: 0;
 }
 
-/* Promo Banner */
 .promo-banner {
   width: 100%;
   padding: 30px 15px;
@@ -155,7 +152,6 @@ body {
   object-fit: contain;
 }
 
-/* Featured Banner */
 .featured-banner {
   width: 100%;
   padding: 40px 15px;
@@ -178,7 +174,6 @@ body {
   line-height: 1.6;
 }
 
-/* Category Selector */
 .category-selector {
   width: 100%;
   padding: 40px 15px 25px;
@@ -233,7 +228,6 @@ body {
   margin: 0 auto 10px;
 }
 
-/* Projects Section */
 .projects-section {
   width: 100%;
   display: flex;
@@ -356,7 +350,6 @@ body {
   background: rgba(255,255,255,0.2);
 }
 
-/* Navigation Buttons */
 .nav-button {
   position: absolute;
   top: 50%;
@@ -388,7 +381,6 @@ body {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -462,7 +454,6 @@ body {
   margin: 8px 0 12px;
 }
 
-/* Community Section */
 .community-section {
   width: 100%;
   padding: 50px 15px;
@@ -498,7 +489,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Footer */
 .footer {
   width: 100%;
   background: rgba(10, 10, 20, 0.85);
@@ -528,7 +518,6 @@ body {
   margin-top: 12px;
 }
 
-/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
   .promo-content,
   .community-content {
@@ -594,7 +583,6 @@ body {
     display: block;
     margin: 6px 0;
   }
-  /* Hide scrollbar on mobile modal */
   .modal::-webkit-scrollbar,
   .modal-content::-webkit-scrollbar {
     display: none;
