@@ -587,92 +587,86 @@ body {
 }
 
 @media (max-width: 768px) {
-
-  body {
+  html, body {
     overflow-x: hidden !important;
   }
 
   .promo-content,
-  .community-content,
-  .category-cards,
-  .slider-wrapper-container {
+  .community-content {
+    flex-direction: column !important;
+    align-items: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
+    padding: 0 15px !important;
   }
 
   .promo-text,
   .community-text {
     min-width: 100% !important;
     text-align: center !important;
+    max-width: 100% !important;
   }
 
   .promo-image img,
   .community-image img {
     max-width: 100% !important;
     height: auto !important;
+    width: auto !important;
   }
 
-  .promo-content,
-  .community-content {
+  .promo-buttons,
+  .community-buttons {
+    justify-content: center !important;
     width: 100% !important;
-    max-width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+
+  .btn {
+    margin: 0 5px 10px !important;
   }
 
   .category-cards {
     width: 100% !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
 
   .category-card {
-    width: 45% !important;
+    width: calc(50% - 16px) !important;
     min-width: 120px !important;
-    margin: 0 2.5% !important;
+    margin: 8px !important;
+    box-sizing: border-box !important;
   }
 
   .slider-wrapper-container {
     max-width: 100% !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
 
   .card-slider {
     width: 90% !important;
     min-width: 90% !important;
-    margin: 0 5% !important;
-  }
-
-  .header h1 {
-    font-size: 18px !important;
-  }
-
-  body {
-    padding-top: 50px !important;
-    scroll-padding-top: 50px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
   .header {
     padding: 10px 15px !important;
   }
 
-  .community-buttons {
-    justify-content: center;
+  .header h1 {
+    font-size: 18px !important;
   }
 
   .featured-banner h2 {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
   .featured-banner p {
-    padding: 0 10px;
+    padding: 0 15px !important;
   }
 
-  .promo-buttons {
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .btn {
-    margin: 0 5px !important;
-  }
   .modal-body {
     flex-direction: column !important;
   }
